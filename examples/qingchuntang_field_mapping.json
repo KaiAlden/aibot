@@ -1,0 +1,10 @@
+{
+  "name": ["产品名称", "产品品名"],
+  "category": "__sheet_name",
+  "form": "__sheet_name",
+  "description": ["卖点", "功效"],
+  "price": "指导零售价",
+  "weight": "规格",
+  "image_url": ["图片", "产品图片"],
+  "constitutions": ["适用体质", "适用于体质"]
+}

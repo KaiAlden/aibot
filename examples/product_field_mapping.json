@@ -1,0 +1,12 @@
+{
+  "name": "商品名称",
+  "category": "品类",
+  "form": "形态",
+  "description": "功效描述",
+  "price": "售价",
+  "weight": "重量",
+  "image_url": "图片URL",
+  "constitutions": "适用体质",
+  "ingredients": "原料",
+  "is_universal": "是否全适用"
+}
