@@ -34,6 +34,9 @@ class Settings(BaseSettings):
     session_ttl_seconds: int = Field(default=1800, ge=60)
     context_max_tokens: int = Field(default=4096, ge=512)
 
+    auth_secret_key: str = "local-dev-change-me"
+    access_token_expire_minutes: int = Field(default=720, ge=1)
+
     product_text_weight: float = 0.4
     product_tcm_weight: float = 0.4
     product_business_weight: float = 0.2

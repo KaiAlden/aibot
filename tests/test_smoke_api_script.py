@@ -14,6 +14,8 @@ def test_run_api_smoke_uses_expected_routes(monkeypatch) -> None:
             return httpx.Response(200, json={"intent": "product", "message": "ok", "recommendations": []})
         if request.url.path == "/api/v1/recommendations":
             return httpx.Response(200, json={"items": []})
+        if request.url.path == "/api/v1/merchant/items":
+            return httpx.Response(200, json={"items": [], "total": 0, "page": 1, "size": 3})
         return httpx.Response(404)
 
     transport = httpx.MockTransport(handler)
@@ -30,3 +32,4 @@ def test_run_api_smoke_uses_expected_routes(monkeypatch) -> None:
     assert ("GET", "/api/v1/health") in calls
     assert calls.count(("POST", "/api/v1/chat")) == 2
     assert ("POST", "/api/v1/recommendations") in calls
+    assert ("GET", "/api/v1/merchant/items") in calls

@@ -43,6 +43,10 @@ def run_api_smoke(base_url: str) -> None:
         recommendation.raise_for_status()
         print_json("recommendations", recommendation.json())
 
+        merchant_items = client.get("/api/v1/merchant/items?page=1&size=3", headers={"X-Merchant-Code": "QCT001"})
+        merchant_items.raise_for_status()
+        print_json("merchant_items", merchant_items.json())
+
 
 def main() -> None:
     sys.stdout.reconfigure(encoding="utf-8")

@@ -1,6 +1,6 @@
 from decimal import Decimal
 
-from app.ingestion.product_importer import map_product_row, parse_list_cell
+from app.ingestion.product_importer import ProductImportIssue, is_blocking_import_issue, map_product_row, parse_list_cell
 
 
 def test_parse_list_cell_supports_chinese_separators() -> None:
